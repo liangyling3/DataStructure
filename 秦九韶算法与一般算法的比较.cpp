@@ -46,10 +46,10 @@ int main() {
 		coefficient[i] = i;
 	}
 	
-	
-	
 	cout << "Ordinary Method: "	<< endl;
 	getRunningTime(OrdinaryMethod, exp, num, coefficient);
 	cout << "Qinjiushao Method: " << endl;
 	getRunningTime(QinjiushaoMethod, exp, num, coefficient); 
+	
+	delete [] coefficient;
 } 
