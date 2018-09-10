@@ -15,7 +15,7 @@ public:
 		if (year == 2000)	firstDay = 6;
 		else
 			firstDay = 6 + ((366*((year-2001)/4+1) + 365*((year-2001)/4*3+(year-2001)%4)) % 7);
-		if (firstDay>7)	firstDay -= 7;
+		if (firstDay>7)		firstDay -= 7;
 	 	
 		//	set days
 		for (int i = 1; i <= 12; ++ i) {
@@ -25,7 +25,7 @@ public:
 			}
 			else if (i == 2) {
 				for (int j = 0; j < 28; ++ j)	days.push_back(j+1); 
-				if ((year%100) / 4 == 0)	days.push_back(29);
+				if ((year%100) % 4 == 0)	days.push_back(29);
 			}  
 			else {
 				for (int j = 0; j < 31; ++ j)	days.push_back(j+1);
