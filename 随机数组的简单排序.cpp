@@ -13,9 +13,9 @@ void print(int arr[], int size) {
 }
 
 int * choseSort (int arr[], int size) {
-	int *sortedArr = arr;
+	int *sortedArr = arr; 
 	for (int i = 0; i < size; ++ i) {
-		int min = sortedArr[i], index;
+		int min = sortedArr[i], index = i;
 		for (int j = i+1; j < size; ++ j) {
 			if (sortedArr[j] < min)	{
 				min = sortedArr[j];
@@ -29,6 +29,7 @@ int * choseSort (int arr[], int size) {
 }
 
 int main() {
+	cout << "Please enter the size of the arbitrary array." << endl; 
 	int size;
 	cin >> size;
 	int *arr = new int [size];
