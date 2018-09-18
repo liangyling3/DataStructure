@@ -91,13 +91,17 @@ int main() {
 	vector<int> trainNumbers = getArbitraryNumber(size);
 	
 	cout << "The arbitrary train numbers are :" << endl;
-	for (int i = 0; i < size; ++ i)
+	for (int i = 0; i < size; ++ i) {
 		cout << setw(5) << trainNumbers[i];
+		if ((i+1)%15==0)	cout << endl;
+	}
 	cout << endl << endl; 
 	
 	cout << "The numbers sorted are :" << endl;
 	vector<int> sortedNumbers = SortByStack(trainNumbers);
-	for (int i = 0; i < size; ++ i) 
+	for (int i = 0; i < size; ++ i) {
 		cout << setw(5) << sortedNumbers[i];
+		if ((i+1)%15==0)	cout << endl;
+	}
 	cout << endl;
 }
