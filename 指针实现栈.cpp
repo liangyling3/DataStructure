@@ -72,27 +72,14 @@ public:
 };
 
 int main() {
-	Stack<char> stack;
-	
-	stack.push('C');
-	stack.show();
-	stack.push('O');
-	stack.show();
-	stack.push('M');
-	stack.show();
-	stack.push('P');
-	stack.show();
-	stack.push('U');
-	stack.show();
-	stack.push('T');
-	stack.show();
-	stack.push('E');
-	stack.show();
-	stack.push('R');
-	stack.show();
+	Stack<int> stack;
+	for (int i = 0; i < 10; ++ i) {
+		stack.push(i+1);
+		stack.show();
+	}
 	cout << endl;
 	
-	for (int i = 0; i < 5; ++ i) {
+	for (int i = 0; i < 8; ++ i) {
 		stack.pop();
 		stack.show();
 	}
