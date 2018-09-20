@@ -6,7 +6,7 @@ template <typename T>
 class Node {
 public:
 	T value;
-	Node *next; 
+	Node<T> *next; 
 	
 	Node() {
 		value = 0;
@@ -47,7 +47,8 @@ public:
 	Stack & pop() {
 		Node<T> *temp = head;
 		head = head->next;
-		delete temp->next;
+		temp->next = 0;
+		if (temp->next == 0)	delete temp->next; 
 		count --;
 		return *this;
 	}
@@ -64,7 +65,6 @@ public:
 		Node<T> *first = head;
 		for(int i = 0; i < count; ++ i) {
 			cout << setw(5) << first->value;
-			if (first->next == 0)	break;
 			first = first->next; 
 		}
 		cout << endl; 
@@ -72,19 +72,33 @@ public:
 };
 
 int main() {
-	Stack<int> stack;
-	for (int i = 0; i < 10; ++ i) {
-		stack.push(i+1);
-		stack.show();
-	}
+	Stack<char> stack;
+	stack.push('C');
+	stack.show();
+	stack.push('O');
+	stack.show();
+	stack.push('M');
+	stack.show();
+	stack.push('P');
+	stack.show();
+	stack.push('U');
+	stack.show();
+	stack.push('T');
+	stack.show();
+	stack.push('E');
+	stack.show();
+	stack.push('R');
+	stack.show();
 	cout << endl;
+	
+	cout << endl << "The top value is : "<< stack.top() << endl;
+	cout << endl << "Judge if the stack is empty : " << stack.empty() << endl << endl;
 	
 	for (int i = 0; i < 8; ++ i) {
 		stack.pop();
 		stack.show();
 	}
 	
-	cout << endl << "The top value is : "<< stack.top() << endl;
 	cout << endl << "Judge if the stack is empty : " << stack.empty() << endl;
 	
 }
