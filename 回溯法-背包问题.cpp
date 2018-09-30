@@ -1,3 +1,20 @@
+/*
+example input 1: 
+	7
+	5
+	3 5 2 4 1
+	
+example input 2;
+	7
+	5
+	3 5 4 2 1 
+	
+example input 3;
+	48 
+	10
+	9     6    10    11     8     4     5     7    12    13 
+*/
+
 #include <iostream>
 #include <iomanip>
 #include <vector>
@@ -12,13 +29,11 @@ ostream & operator << (ostream & out, vector<int> &v) {
 
 void thingsToBag(int total, vector<int> volumes, int index, vector<vector<int> > &fillWell) {
 	static vector<int> temp;
-	static int count = 0;
 	if (total == 0)	{
 		fillWell.push_back(temp);
 		if(index - 1 < volumes.size()) {
 			temp.pop_back();
 		}
-		count --;
 		return;
 	}
 	for(int i = index; i < volumes.size(); ++ i) {
@@ -27,12 +42,10 @@ void thingsToBag(int total, vector<int> volumes, int index, vector<vector<int> >
 		}
 		
 		temp.push_back(volumes[i]); 
-		count ++;
 		thingsToBag(total-volumes[i], volumes, i+1, fillWell);
 		
 	}
 	temp.pop_back();
-	count --;
 	return;
 } 
 
