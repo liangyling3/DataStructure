@@ -100,8 +100,7 @@ public:
 		tail = node;
 		if (count == 0) head = tail;
 		count ++; 
-		return *this;
-		
+		return *this; 
 	}
 	
 	Queue & pop() {
