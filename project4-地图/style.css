@@ -1,0 +1,141 @@
+body {
+	background-color: #dae4fd;
+	position: relative;
+	font-family: "Euphoria, sans-serif";
+}
+
+#map {
+	text-align: center;
+	margin: auto;
+}
+
+.site {
+	fill: #aec4fd;
+	stroke: #5568aa;
+	stroke-width: 2.5;
+}
+
+.site:hover {
+	fill: #c1d3ff;
+	stroke: #5568aa;
+	transition: 0.3s;
+}
+
+path {
+	stroke-width: 4.5;
+	/* stroke: #5568aa; */
+}
+
+path:hover {
+	stroke: #9e5994;
+	transition: 0.3s;
+}
+
+text {
+	fill: #5568aa;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+#info {
+	width: 400px;
+	background-color: #dae4fd;
+	border: solid 3px #5568aa;
+	float: left;
+	position: absolute;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+}
+
+#siteName {
+	font-size: 25px;
+	line-height: 25px;
+	color: #5568aa;
+}
+
+#introduction {
+	font-size: 20px;
+	line-height: 25px;
+	color: #5568aa;
+	text-align: left;
+}
+
+#close {
+	color: #5568aa;
+	width: 45px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 40px;
+	border: solid 3px #5568aa;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+}
+
+input {
+    height: 30px;
+    font-size: 25px;
+    width: 150px;
+    text-align: center;
+}
+
+#input {
+    position: fixed;
+    top: 88%;
+    left: 35%;
+    font-size: 25px;
+    line-height: 25px;
+    font-family: "Euphoria, sans-serif";
+    color: #5568aa;
+}
+
+#startIndex, #endIndex, #siteIndex {
+	border: solid 2px #5568aa;
+	color: #5568aa;
+}
+
+button {
+	line-height: 22px;
+	font-size: 22px;
+	font-family: "Euphoria, sans-serif";
+    color: #5568aa;
+    outline: none;
+    background-color: #aec4fd;
+    border: solid 2px #5568aa;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+button:active, button.active, button.is-active {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    background-color: #5568aa;
+    border-color: #dae4fd;
+    color: #dae4fd;
+    transition-duration: 0s;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); 
+}
+
+.button {
+	height: 35px;
+	width: 80px;
+	margin-left: 20px;
+}
+
+#setStart, #setEnd {
+	height: 35px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#searchSite, #searchPath {
+	margin-bottom: 20px;
+}
+
+#siteIndex {
+	margin-left: 25px;
+}
