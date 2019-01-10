@@ -56,10 +56,7 @@ class GraphMatrix {
 
   	// 深度优先搜索
   	void dfsTraverse() const {
-  		vector<int> isVisited;			// 标记访问
-		for (int i = 0; i < size; ++ i) {
-			isVisited.push_back(0);
-		}
+  		vector<int> isVisited(size);			// 标记访问
 
 		cout << "Please input the first vertex:" << '\n';
 		DATA v;
@@ -217,8 +214,7 @@ class GraphMatrix {
 };
 
 
-class node {
- public:
+struct node {
  	DATA data;
  	vector<int> indexes;
  	vector<int> paths;

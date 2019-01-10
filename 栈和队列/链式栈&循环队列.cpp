@@ -31,10 +31,18 @@ public:
 		count = 0;
 	}
 	
+
 	~Stack() {
+		// 不能只删头结点！从头结点的下一个开始删
+		Node<T> * p;
+		while (head->next) {
+			p = head->next;
+			head->next = p->next;
+			delete p;
+		}
 		delete head;
 	}
-	
+
 	Stack & push(T value) {
 		Node<T> *node = new Node<T>;	//	new a node
 		node->value = value;
@@ -42,14 +50,14 @@ public:
 		head = node;
 		count ++;
 		return *this;
-		
 	}
 	
 	Stack & pop() {
 		Node<T> *temp = head;
 		head = head->next;
 		temp->next = 0;
-		if (temp->next == 0)	delete temp->next; 
+		if (temp->next == 0)	
+			delete temp->next; 
 		count --;
 		return *this;
 	}
@@ -96,9 +104,13 @@ public:
 		Node<T> *node = new Node<T>;	//	new a node
 		node->value = value;
 		node->next = head;
-		if(tail != 0)	tail->next = node;
+		if(tail != 0) {
+			tail->next = node;
+		}
 		tail = node;
-		if (count == 0) head = tail;
+		if (count == 0) {
+			head = tail;
+		}
 		count ++; 
 		return *this; 
 	}
@@ -109,7 +121,9 @@ public:
 		tail->next = head;
 		count --;
 		temp->next = 0;				//	avoid repeated release 
-		if (temp->next == 0)	delete temp->next;
+		if (temp->next == 0) {
+			delete temp->next;
+		}
 		return *this;
 	}
 	
